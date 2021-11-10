@@ -6,10 +6,11 @@ namespace ChallengesWithTestsMark8
 {
     public class ChallengesSet02
     {
+        //    Finished and passed all tests for week 2
         public bool CharacterIsALetter(char c)
         {
             bool result;
-            result = CharacterIsALetter(c);
+            result = Char.IsLetter(c);
             if (result)
             {
                 return true;
@@ -58,38 +59,73 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            var max = numbers.Max();
-            var min = numbers.Min();
-            var sum = min + max;
-            return sum;
+            //return null if enumerable is empty
+            if (numbers == null || numbers.Count() == 0)
+            {
+                return 0;
+            }
+            else
+            {
+
+                var max = numbers.Max();
+                var min = numbers.Min();
+                var sum = min + max;
+                return sum;
+            }
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            throw new NotImplementedException();
+            if (str1.Length < str2.Length)
+            {
+                return str1.Length;
+            }
+            else
+            {
+                return str2.Length;
+            }
         }
 
         public int Sum(int[] numbers)
         {
-            return numbers.Sum();
+            if (numbers == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return numbers.Sum();
+            }
         }
          
         public int SumEvens(int[] numbers)
         {
-            int sum = 0;
-            foreach (var i in numbers)
+            if (numbers == null)
             {
-                if (i % 2 == 0)
-                {
-                    sum += i;
-                }
+                return 0;
             }
-            return sum;
+            else
+            {
+
+                int sum = 0;
+                foreach (var i in numbers)
+                {
+                    if (i % 2 == 0)
+                    {
+                        sum += i;
+                    }
+                }
+                return sum;
+            }
         }
 
         public bool IsSumOdd(List<int> numbers)
         {
-            if (numbers.Sum() % 2 != 0)
+            if (numbers == null)
+            {
+                return false;
+            }
+            else if (numbers.Sum() % 2 != 0)
             {
                 return true;
             }
@@ -101,12 +137,12 @@ namespace ChallengesWithTestsMark8
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            var oddSum = 0;
-            for (int i = 0; i > number; i++)
+            long oddSum = 0;
+            for (int i = 0; i < number; i++)
             {
                 if (i % 2 != 0)
                 {
-                    oddSum += i;
+                    oddSum ++;
                 }
             }
             return oddSum;
