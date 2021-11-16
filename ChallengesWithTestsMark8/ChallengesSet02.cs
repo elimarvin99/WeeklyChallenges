@@ -9,93 +9,38 @@ namespace ChallengesWithTestsMark8
         //    Finished and passed all tests for week 2
         public bool CharacterIsALetter(char c)
         {
-            bool result;
-            result = Char.IsLetter(c);
-            if (result)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return Char.IsLetter(c); 
         }
 
         public bool CountOfElementsIsEven(string[] vals)
         {
-            if (vals.Length % 2 == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (vals.Length % 2 == 0) ? true : false;
         }
         
         public bool IsNumberEven(int number)
         {
-            if (number % 2 == 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (number % 2 == 0) ? true : false;
         }
 
         public bool IsNumberOdd(int num)
         {
-            if (num % 2 != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return (num % 2 != 0) ? true : false;
         }
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
             //return null if enumerable is empty
-            if (numbers == null || numbers.Count() == 0)
-            {
-                return 0;
-            }
-            else
-            {
-
-                var max = numbers.Max();
-                var min = numbers.Min();
-                var sum = min + max;
-                return sum;
-            }
+            return (numbers == null || numbers.Count() == 0) ? 0 : numbers.Max() + numbers.Min();
         }
 
         public int GetLengthOfShortestString(string str1, string str2)
         {
-            if (str1.Length < str2.Length)
-            {
-                return str1.Length;
-            }
-            else
-            {
-                return str2.Length;
-            }
+            return (str1.Length < str2.Length) ? str1.Length : str2.Length;
         }
 
         public int Sum(int[] numbers)
         {
-            if (numbers == null)
-            {
-                return 0;
-            }
-            else
-            {
-                return numbers.Sum();
-            }
+            return (numbers == null) ? 0 : numbers.Sum();
         }
          
         public int SumEvens(int[] numbers)
@@ -137,15 +82,23 @@ namespace ChallengesWithTestsMark8
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            long oddSum = 0;
-            for (int i = 0; i < number; i++)
+            //long oddSum = 0;
+            //for (int i = 0; i < number; i++)
+            //{
+            //    if (i % 2 != 0)
+            //    {
+            //        oddSum ++;
+            //    }
+            //}
+            //return oddSum;
+            if (number <= 0)
             {
-                if (i % 2 != 0)
-                {
-                    oddSum ++;
-                }
+                return 0;
             }
-            return oddSum;
+            else
+            {
+                return number / 2;    //returning (if number is positive) sum of number that is rounded to even divided by 2 that will return sum of evens
+            }
         }
     }
 }
