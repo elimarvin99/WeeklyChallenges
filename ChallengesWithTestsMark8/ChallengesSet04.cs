@@ -8,42 +8,44 @@ namespace ChallengesWithTestsMark8
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-            int even = 0;
-            int odd = 0;
-            foreach (var item in numbers)
-            {
-                if (item % 2 == 0)
-                {
-                    even += item;
-                }
-                else
-                {
-                    even -= item;
-                }
-            }
-            return even;
+            //int sum = 0;
+            //foreach (var item in numbers)
+            //{
+            //    if (item % 2 == 0)
+            //    {
+            //        sum += item;
+            //    }
+            //    else
+            //    {
+            //        sum -= item;
+            //    }
+            //}
+            //return sum;
+            return numbers.Where(x => x % 2 == 0).Sum() - numbers.Where(x => x % 2 != 0).Sum();
         }
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
-            int shortest = 1000000;
-            if (str1.Length < shortest)
-            {
-                shortest = str1.Length;
-            }
-            if (str2.Length < shortest)
-            {
-                shortest = str2.Length;
-            }
-            if (str3.Length < shortest)
-            {
-                shortest = str3.Length;
-            }
-            if (str4.Length < shortest)
-            {
-                shortest = str4.Length;
-            }
-            return shortest;
+            var stringList = new List<int> { str1.Length, str2.Length, str3.Length, str4.Length };
+            return stringList.Min();
+            //int shortest = 1000000;
+            //if (str1.Length < shortest)
+            //{
+            //    shortest = str1.Length;
+            //}
+            //if (str2.Length < shortest)
+            //{
+            //    shortest = str2.Length;
+            //}
+            //if (str3.Length < shortest)
+            //{
+            //    shortest = str3.Length;
+            //}
+            //if (str4.Length < shortest)
+            //{
+            //    shortest = str4.Length;
+            //}
+            //return shortest;
 
         }
 
@@ -78,15 +80,15 @@ namespace ChallengesWithTestsMark8
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            int result = objs.Count(x => x == null);
-            if (result > objs.Count() / 2)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return objs.Count(x => x == null) > objs.Count() / 2;
+            //if (result > objs.Count() / 2)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
         }
 
         public double AverageEvens(int[] numbers)

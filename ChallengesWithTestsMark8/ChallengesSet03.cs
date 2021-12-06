@@ -71,6 +71,7 @@ namespace ChallengesWithTestsMark8
         public char GetLastLetterOfString(string val)
         {
             return val[val.Length - 1];
+            //return val[^1];
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
@@ -93,14 +94,23 @@ namespace ChallengesWithTestsMark8
 
         public int[] GetOddsBelow100()
         {
-            var odds = new int[] {
-                1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25,
-                27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49,
-                51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73,
-                75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99
-            };
+            var oddsList = new List<int>();
+            for (int i = 0; i < 100; i++)
+            {
+                if (i %2 != 0)
+                {
+                    oddsList.Add(i);
+                }
+            }
+            return oddsList.ToArray();
+            //var odds = new int[] {
+            //    1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25,
+            //    27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49,
+            //    51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73,
+            //    75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99
+            //};
 
-            return odds;
+            //return odds;
         }
 
         public void ChangeAllElementsToUppercase(string[] words)
