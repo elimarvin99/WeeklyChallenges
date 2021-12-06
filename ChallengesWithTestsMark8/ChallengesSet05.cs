@@ -98,6 +98,17 @@ namespace ChallengesWithTestsMark8
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
+            //for (int i = 0; i < nums.Length; i++)
+            //{
+            //    for (int j = i + 1; j < nums.Length; j++)
+            //    {
+            //        if (nums[i] + nums[j] == targetNumber)
+            //        {
+            //            return true; //if condition is found and returned we break out of loop
+            //        }
+            //    }
+            //}
+            //return false;
             Dictionary<int, int> numsDictionary = new Dictionary<int, int>();
 
             for (int i = 0; i < nums.Length; i++)
@@ -113,8 +124,7 @@ namespace ChallengesWithTestsMark8
                 numsDictionary[num] = i;
             }
             return false;
-            
-            //throw new NotImplementedException();
+
         }
     }
 }
